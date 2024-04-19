@@ -45,7 +45,7 @@ def main():
         start_date = get_date("Enter the start date for stock visualizer: ")
         end_date = get_date("Enter the end date for stock visualizer: ")
 
-        print("Input is valid.")
+        print("Inputs are valid.")
     except KeyboardInterrupt:
         print("\nProgram terminated by user.")
     except Exception as e:
