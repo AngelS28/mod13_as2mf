@@ -7,17 +7,20 @@ def get_symbol(symbol):
         return True 
     
 def get_chart_type(chart_type):
-    if chart_type not in [1 , 2]:
+    if chart_type not in ['1', '2']:
         return False 
     else:
         return True
     
 def get_time_series(time_series):
-    if not ( 1<= time_series <= 4):
+    try:
+        time_series = int(time_series)
+        if not (1 <= time_series <= 4):
+            return False
+        else:
+            return True
+    except ValueError:
         return False
-    else:
-        return True
-    
 
 def get_date(date):
     try:
@@ -29,8 +32,8 @@ def get_date(date):
 
 def main():
     symbol = input("Enter the symbol for stock visualizer: ")
-    chart_type = input("Enter the chart type for stocke visualizer: ")
-    time_series = input ("Enter the time series for stock visualizer: ")
+    chart_type = input("Enter the chart type for stock visualizer: ")
+    time_series = input("Enter the time series for stock visualizer: ")
     start_date = input("Enter the start date for stock visualizer: ")
     end_date = input("Enter the end date for stock visualizer: ")
 
