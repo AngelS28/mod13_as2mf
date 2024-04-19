@@ -10,7 +10,7 @@ def get_symbol():
 
 def get_chart_type():
     while True:
-        chart_type = input("Enter the chart type for stock visualizer (1 or 2): ")
+        chart_type = input("Enter the chart type for stock visualizer: ")
         if chart_type in ['1', '2']:
             return chart_type
         else:
@@ -18,7 +18,7 @@ def get_chart_type():
 
 def get_time_series():
     while True:
-        time_series = input("Enter the time series for stock visualizer (1-4): ")
+        time_series = input("Enter the time series for stock visualizer: ")
         try:
             time_series = int(time_series)
             if 1 <= time_series <= 4:
@@ -42,8 +42,8 @@ def main():
         symbol = get_symbol()
         chart_type = get_chart_type()
         time_series = get_time_series()
-        start_date = get_date("Enter the start date for stock visualizer (YYYY-MM-DD): ")
-        end_date = get_date("Enter the end date for stock visualizer (YYYY-MM-DD): ")
+        start_date = get_date("Enter the start date for stock visualizer: ")
+        end_date = get_date("Enter the end date for stock visualizer: ")
 
         print("Input is valid.")
     except KeyboardInterrupt:
